@@ -10,4 +10,3 @@ pip install cmake
 
 pip install opencv-python
 
-pip install pickle5
