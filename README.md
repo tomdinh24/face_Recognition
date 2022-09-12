@@ -10,5 +10,8 @@ pip install cmake
 
 pip install opencv-python
 
+Image Folder:
 
-Create an image folder and Upload image you want to train
+Create an image folder and upload images you want to train
+
+Recomend: 6+ images that show face and forehead 
