@@ -10,3 +10,5 @@ pip install cmake
 
 pip install opencv-python
 
+
+Create an image folder and Upload image you want to train
