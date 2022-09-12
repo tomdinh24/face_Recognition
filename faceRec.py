@@ -1,3 +1,5 @@
+# run file to train the program to recognize the image
+# the more you run it, the more acurate the program detects the image
 import cv2
 import os
 from PIL import Image
@@ -14,7 +16,7 @@ recognizer = cv2.face_LBPHFaceRecognizer.create()
 # retrieve the directory of the file
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-# retrieve image directory 
+# retrieve image directory from folder images/...
 image_dir = os.path.join(BASE_DIR, "images")
 
 cur_id = 0

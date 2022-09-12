@@ -35,9 +35,7 @@ def faceCam():
 
         # box around face
         for x,y,w,h in faces:
-            # print(x,y,w,h)
 
-            # capture face image when exit program
             roi_gray = gray[y:y+h, x:x+w] # (ycord_start, ycord_end)
             roi_color = frame[y:y+h, x:x+w] 
 

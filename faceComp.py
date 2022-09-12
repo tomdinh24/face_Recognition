@@ -18,26 +18,30 @@ def faceComp(image_path1, image_path2):
     image2 = cv2.imread(image_path2)
 
 
-        # capture by frame
+    # capture by frame
     gray1 = cv2.cvtColor(image1, cv2.COLOR_BGR2GRAY)
     gray2 = cv2.cvtColor(image2, cv2.COLOR_BGR2GRAY)
 
-        # detect face
+    # detect face
     faces1 = faceCascade.detectMultiScale( gray1, scaleFactor = 1.5, minNeighbors = 5, minSize = (30,30))
     faces2 = faceCascade.detectMultiScale( gray2, scaleFactor = 1.5, minNeighbors = 5, minSize = (30,30))
 
+    # box around face
     for x,y,w,h in faces1:
         roi_gray1 = gray1[y:y+h, x:x+w]
+
     for x,y,w,h in faces2:
         roi_gray2 = gray2[y:y+h, x:x+w]
 
-
+    # retrieve user id and confidence level
     id_1, conf_1 = recognizer.predict(roi_gray1)
     print("face1: ", labels[id_1], " - confident level: ",conf_1 )
 
     id_2, conf_2 = recognizer.predict(roi_gray2)
     print("face2: ", labels[id_2], " - confident level: ",conf_2 )
 
+    # if confidence level is high then it is a match
+    # if confidence levle is low then it can't predict the user
     if conf_1 >= 70 and conf_2 >= 70:
         if id_1 == id_2:
             print("MATCH of \"{}\" type photos!".format(labels[id_1]))

@@ -11,6 +11,7 @@ def prompt():
     option = input("Which option would you like to select? ")
     return option
 
+# user want to continue?
 def user_exit():
     exit = input("Do you want to continue? (Y/N) \n")
             
@@ -26,7 +27,7 @@ def user_exit():
         user_exit()
 
 
-
+# match user input to available options
 def match_option(option):
     match option:
         case "1":
@@ -47,6 +48,7 @@ def match_option(option):
         
 
 
+# main
 
 exit = True
 
